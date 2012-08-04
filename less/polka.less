@@ -1,0 +1,24 @@
+// CSS Reset
+@import "reset.less";
+
+// Core variables and mixins
+@import "variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "mixins.less";
+
+// Utility classes
+@import "utilities.less";
+
+.polka-accordion {
+	.polka-heading {
+		color: @inactiveHeadingColor;
+	}
+	.polka-heading.open {
+		color: @activeHeadingColor;
+	}
+	.polka-tab {
+		.hide;
+	}
+	.polka-tab.open {
+		.show;
+	}
+}

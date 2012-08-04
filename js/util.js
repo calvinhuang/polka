@@ -126,6 +126,20 @@ var $dom = (function(){
 		}
 		return this;
 	};
+	wrapper.prototype.item = function(index) {
+		return dom(this.obj[index]);
+	};
+	wrapper.prototype.parent = function() {
+		var parent = false;
+		if (this.obj.length) {
+			if (this.obj.length > 0) {
+				parent = dom(this.obj.item(0).parentNode);
+			}
+		} else {
+			parent = dom(this.obj.parentNode);
+		}
+		return parent;
+	}
 	
 	for (i = 0; i < nodeFns.length; i++) {
 		wrapper.prototype[nodeFns[i]] = function() {

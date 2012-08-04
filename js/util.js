@@ -41,11 +41,18 @@ var $dom = (function(){
 			getById = document.getElementById.bind(document),
 			getByClass = document.getElementsByClassName.bind(document),
 			getByTag = document.getElementsByTagName.bind(document),
-			addEvent = function(type, callback){
-				if (this.addEventListener) {
-					this.addEventListener(type, callback, false);
-				} else if (this.attachEvent)  {
-					this.attachEvent('on'+type, callback);
+			
+		/**
+		 * Add an event handler to element
+		 * @param {Object} obj Element to listen on
+		 * @param {String} type Event type
+		 * @param {Function} callback Event handler
+		 */
+			addEvent = function(obj, type, callback){
+				if (obj.addEventListener) {
+					obj.addEventListener(type, callback, false);
+				} else if (obj.attachEvent)  {
+					obj.attachEvent('on'+type, callback);
 				}
 			},
 		/**
@@ -100,7 +107,10 @@ var $dom = (function(){
 		return dom(getByTag.call(this.obj, tag));
 	};
 	wrapper.prototype.addEvent = function(type, callback){
-		addEvent.call(this.obj, type, callback);
+		this.each(function(obj){
+			console.log(type);
+			addEvent(obj, type, callback);
+		});
 		return this;
 	};
 	wrapper.prototype.addClass = function(classname) {
@@ -139,7 +149,7 @@ var $dom = (function(){
 			parent = dom(this.obj.parentNode);
 		}
 		return parent;
-	}
+	};
 	
 	for (i = 0; i < nodeFns.length; i++) {
 		wrapper.prototype[nodeFns[i]] = function() {
@@ -156,7 +166,10 @@ var $dom = (function(){
 	dom.getById = getById;
 	dom.getByClass = getByClass;
 	dom.getByTag = getByTag;
-	dom.addEvent = addEvent.bind(window);
+	dom.addEvent = function(type, callback) {
+		addEvent.call(window, window, type, callback);
+		return this;
+	};
 	
 	dom.prototype = wrapper.prototype;
 	

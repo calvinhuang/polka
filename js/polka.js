@@ -14,7 +14,7 @@
 	'use strict';
 
 	var polka = function(obj) {
-		var headings, tabs, index = 0;
+		var headings, tabs, index = 0, that = this;
 		headings = $dom(obj)
 			.addClass('polka-accordion')
 			.getByTag('dt').addClass('polka-heading');
@@ -24,16 +24,30 @@
 			var j;
 			for (j = 0; j < headings.obj.length; j++) {
 				if (j !== i) {
-					console.log('@'+j+' closed.');
 					headings.item(j).removeClass('open');
 					tabs.item(j).removeClass('open');
 				} else {
-					console.log('@'+j+' opened.');
 					headings.item(j).addClass('open');
 					tabs.item(j).addClass('open');
+					index = j;
 				}
 			}
 		};
+		
+		this.select = function(el) {
+			var j;
+			for (j = 0; j < headings.obj.length; j++) {
+				if (headings.item(j).obj === el) {
+					this.open(j);
+					return true;
+				}
+			}
+			return false;
+		}
+		
+		headings.addEvent('click', function(){
+			that.select(this);
+		});
 		
 		this.open(index);
 	};

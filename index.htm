@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Accordion Demo</title>
+    <link rel="stylesheet" href="css/polka.css" type="text/css" />
+    <!-- @TODO: replace with custom classList shim -->
+    <script type="text/javascript" src="js/libs/classList.js"></script>
+    <script type="text/javascript" src="js/libs/es5-shim.js"></script>
+    <!-- @TODO: replace with custom each function -->
+    <script type="text/javascript" src="js/libs/underscore.js"></script>
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/polka.js"></script>
+    <script type="text/javascript">
+      onload = function(){
+        var elAccordion = $dom.getById('Accordion');
+        var accordion = new polka(elAccordion);
+      };
+      $dom.addEvent('load')
+    </script>
+    <style type="text/css">
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10px;
+      }
+      blockquote>p {
+        margin-left: 50px;
+        margin-right: 50px;
+        font-style: italic;
+        font-size: 150%;
+      }
+      blockquote:before,
+      blockquote:after {
+        font-size: 500%;
+        color: #CCC;
+      }
+      blockquote:before {
+        content: '\201C';
+      }
+      blockquote:after {
+        content: '\201D';
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Accordion Demo</h1>
+    </header>
+    <section id="Notes">
+      <dl id="Accordion">
+        <dt><h2>A gigantic wasteland of a career path</h2></dt>
+        <dd>
+          <blockquote>
+            <p>I was accepted into the ranks of the Sam Walton elite: I became Joe 'The Overnight Electronics Department Employee" Peakcock.</p>
+            <p>...</p>
+            <p>
+              The only validation of my personal character came when I asked him what I had done to
+              piss them off so badly. He replied, "Dude, you didn't do anything. These are simple
+              people who are not worthy of your hatred. You don't belong at a place like Wal-Mart.
+              Everyone knows it. One day you will become a famous writer and amass a huge following.
+              People will adore you and look at you as an influence for themselves and their children.
+              Statues will be erected in your honor. A car will be named after you. You will be able
+              to transmute lead into gold, and you will evolve into pure energy and understand the
+              true nature of God." Or something like that—because he asked not to be named, he can't
+              refute the quote.
+            </p>
+            <p>...</p>
+          </blockquote>
+        </dd>
+        <dt><h2>Cassini-Huygens</h2></dt>
+        <dd>
+          <blockquote>
+            <p>
+              ...to any potential inhabitants of the saturnian system: your eyes are not deceiving
+              you tonight; there is a 30 second moon racing your night skies, and that is the
+              Cassini-Huygens spacecraft.
+            </p>
+          </blockquote>
+        </dd>
+        <dt><h2><abbr title="Logistics Civil Augmentation Program">LOGCAP</abbr></h2></dt>
+        <dd>
+          <h3>LOGCAP (Logistics Civil Augmentation Program)</h3>
+          <ul>
+            <li>
+              Created in 1985 to privatize more of the duties involved in civil logistics in the military.
+            </li>
+            <li>
+              Later, Dick Cheny, as defense secretary in 1992, spearheaded a movement to privatize
+              most of the military's civil logistics activities.
+            </li>
+            <li>
+              Under his direction, Pentagon paid $9 million to Halliburton/KBR to conduct a study to
+              determine whether private companies like itself should handle all of the military's
+              civil logistics.
+            </li>
+            <li>
+              KBR's classified study concluded that greater privatization of logistics was in the
+              government's best interest. Shortly after, on Aug 3, 1992, Cheney awarded the first
+              comprehensive LOGCAP contract to KBR.
+            </li>
+            <li>
+              3 years later, Halliburton hired Cheney as CEO
+            </li>
+            <li>
+              In 1997, two years after Cheney became CEO of Halliburton, KBR's LOGCAP contract was
+              not renewed; the government alleged the company engaged in fraudulent billing practices.
+            </li>
+            <li>
+            <li>
+              The independent auditing arm of Congress, the GAO, criticized KBR's performance during
+              America's war in the Balkans. KBR's cost-overruns in the Balkans inflated the original
+              contract price by 32%.
+            </li>
+            <li>
+              After KBR was fired by the Army in 1997, the LOGCAP contract was awarded to
+              Halliburton competitor DynCorp. But after Cheney became Vice President in 2001,
+              DynCorp was fired and KBR was re-awarded the contract.
+            </li>
+            <li>
+              Halliburton revenue from LOGCAP increased from $320 million in 2nd quarter of 2003 to
+              over $2 billion in fourth quarter of 2003.
+            </li>
+            <li>
+              As of May 2004, the federal government had spent nearly $5 billion on LOGCAP since KBR
+              became the sole contractor in 2001.
+            </li>
+            <li>
+              The original value of LOGCAP in Iraq was estimated at over $4 billion, but the value
+              of the contract is now over $8 billion. $8 billion figure for Iraq does not include
+              KBR's LOGCAP business in dozens of other countries around the globe, including
+              Guantanimo Bay, Cuba, where it constructed the prison facilities.
+            </li> 
+          </ul>
+        </dd>
+      </dl>
+    </section>
+  </body>
+</html>

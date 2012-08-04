@@ -12,9 +12,13 @@
 body {
 	.margin(vh, @pageMarginV);
 	padding: @pagePadding;
-	font-family: @sansFontFamily;
+	font-family: @bodyFontFamily;
 	font-size: @baseFontSize;
 	line-height: @baseLineHeight;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: @dispFontFamily;
+	line-height: @dispLineHeight;
 }
 h1 {
 	font-size: @h1FontSize;
@@ -45,6 +49,30 @@ section {
 }
 blockquote {
 	.margin(vh, @interMargin);
+	padding-top: @interMargin;
+	padding-bottom: @interMargin;
+	p {
+		margin-left: 50px;
+		margin-right: 50px;
+		font-family: @serifFontFamily;
+		font-style: italic;
+		font-size: @baseFontSize;
+	}
+}
+blockquote:before,
+blockquote:after {
+	font-size: 400%;
+	font-weight: bold;
+	color: @grey2;
+}
+blockquote:before {
+	content: '\201C';
+	float: left;
+	margin-top: -@interMargin;
+}
+blockquote:after {
+	content: '\201D';
+	float: right;
 }
 
 .polka-accordion {
@@ -55,19 +83,32 @@ blockquote {
 	.polka-heading {
 		color: @inactiveHeadingColor;
 		background-color: @inactiveBgColor;
+		.gradient(vertical, @grey2b, @grey2a);
+		border-top: 1px solid #fff;
+		.box-shadow('1 1 1px @grey4');
 		padding-bottom: @headerPadding / 2;
+		text-transform: uppercase;
+		h2 {
+			line-height: 1em;
+			.engrave();
+		}
 	}
 	.polka-heading.open {
 		color: @activeHeadingColor;
 		background-color: @activeBgColor;
+		.gradient(vertical, @grey1b, @grey1a);
 	}
 	.polka-tab {
 		.hide;
 		background-color: @inactiveBgColor;
+		.gradient(vertical, @grey2, @grey2b);
+		.engrave();
 		padding-top: @headerPadding / 2;
+		overflow: auto;
 	}
 	.polka-tab.open {
 		.show;
 		background-color: @activeBgColor;
+		.gradient(vertical, @grey1, @grey1b);
 	}
 }

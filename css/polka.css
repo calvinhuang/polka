@@ -140,32 +140,41 @@ textarea {
 body {
   margin: 48px 60px;
   padding: 0;
-  font-family: DINCond, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
+  line-height: 2em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: DINCond, "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.5em;
 }
 h1 {
   font-size: 56px;
   font-weight: bold;
-  line-height: 1.5em;
+  line-height: 2em;
   margin: 0.2em 0 0.24em;
 }
 h2 {
   font-size: 40px;
   font-weight: normal;
-  line-height: 1.5em;
+  line-height: 2em;
   margin: 0.2em 0 0.24em;
 }
 h3 {
   font-size: 32px;
   font-weight: bold;
-  line-height: 1.5em;
+  line-height: 2em;
   margin: 0.2em 0 0.24em;
 }
 h4 {
   font-size: 24px;
   font-weight: normal;
-  line-height: 1.5em;
+  line-height: 2em;
   margin: 0.2em 0 0.24em;
 }
 section {
@@ -173,6 +182,30 @@ section {
 }
 blockquote {
   margin: 12px 15px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+blockquote p {
+  margin-left: 50px;
+  margin-right: 50px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 16px;
+}
+blockquote:before,
+blockquote:after {
+  font-size: 400%;
+  font-weight: bold;
+  color: #d6d6d6;
+}
+blockquote:before {
+  content: '\201C';
+  float: left;
+  margin-top: -12px;
+}
+blockquote:after {
+  content: '\201D';
+  float: right;
 }
 .polka-accordion .polka-heading,
 .polka-accordion .polka-tab {
@@ -182,18 +215,57 @@ blockquote {
 .polka-accordion .polka-heading {
   color: #767676;
   background-color: #d1d1d1;
+  background: -moz-linear-gradient(vertical, #cacaca, #d1d1d1);
+  background-color: #cecece;
+  background: -webkit-gradient(linear, left top, left bottom, from(#cacaca), to(#d1d1d1));
+  background: -webkit-linear-gradient(top, #cacaca, #d1d1d1);
+  background: -moz-linear-gradient(top, #cacaca, #d1d1d1);
+  background: -ms-linear-gradient(top, #cacaca, #d1d1d1);
+  background: -o-linear-gradient(top, #cacaca, #d1d1d1);
+  border-top: 1px solid #fff;
+  -webkit-box-shadow: '1 1 1px @grey4';
+  -moz-box-shadow: '1 1 1px @grey4';
+  box-shadow: '1 1 1px @grey4';
   padding-bottom: 12px;
+  text-transform: uppercase;
+}
+.polka-accordion .polka-heading h2 {
+  line-height: 1em;
+  text-shadow: 1px 1px 0 #ffffff;
 }
 .polka-accordion .polka-heading.open {
   color: #000000;
   background-color: #ededed;
+  background: -moz-linear-gradient(vertical, #e6e6e6, #ebebeb);
+  background-color: #e9e9e9;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e6e6e6), to(#ebebeb));
+  background: -webkit-linear-gradient(top, #e6e6e6, #ebebeb);
+  background: -moz-linear-gradient(top, #e6e6e6, #ebebeb);
+  background: -ms-linear-gradient(top, #e6e6e6, #ebebeb);
+  background: -o-linear-gradient(top, #e6e6e6, #ebebeb);
 }
 .polka-accordion .polka-tab {
   display: none;
   background-color: #d1d1d1;
+  background: -moz-linear-gradient(vertical, #d6d6d6, #cacaca);
+  background-color: #d0d0d0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#d6d6d6), to(#cacaca));
+  background: -webkit-linear-gradient(top, #d6d6d6, #cacaca);
+  background: -moz-linear-gradient(top, #d6d6d6, #cacaca);
+  background: -ms-linear-gradient(top, #d6d6d6, #cacaca);
+  background: -o-linear-gradient(top, #d6d6d6, #cacaca);
+  text-shadow: 1px 1px 0 #ffffff;
   padding-top: 12px;
+  overflow: auto;
 }
 .polka-accordion .polka-tab.open {
   display: block;
   background-color: #ededed;
+  background: -moz-linear-gradient(vertical, #ededed, #e6e6e6);
+  background-color: #eaeaea;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#e6e6e6));
+  background: -webkit-linear-gradient(top, #ededed, #e6e6e6);
+  background: -moz-linear-gradient(top, #ededed, #e6e6e6);
+  background: -ms-linear-gradient(top, #ededed, #e6e6e6);
+  background: -o-linear-gradient(top, #ededed, #e6e6e6);
 }

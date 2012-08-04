@@ -13,12 +13,15 @@
 (function(root){
 	'use strict';
 
-	var polka = function(obj) {
-		var headings, tabs, index = 0, that = this;
-		headings = $dom(obj)
-			.addClass('polka-accordion')
-			.getByTag('dt').addClass('polka-heading');
-		tabs = $dom(obj).getByTag('dd').addClass('polka-tab');
+	var polka = function(obj, params) {
+		var headings, tabs, index = 0, that = this, accord = $dom(obj),
+				defaults = {
+					'accordion-class': 'polka-accordion',
+					'heading-class': 'polka-heading',
+					'tab-class': 'polka-tab',
+					'heading-tag': 'dt',
+					'tab-tag': 'dd'
+				};
 		
 		this.open = function(i) {
 			var j;
@@ -43,13 +46,36 @@
 				}
 			}
 			return false;
-		}
+		};
 		
-		headings.addEvent('click', function(){
-			that.select(this);
-		});
+		this.init = function(params) {
+			var opt = this.settings, i;
+			opt = _.clone(defaults);
+			
+			if (params) _.extend(opt, params);
+			
+			accord.addClass(opt['accordion-class']);
+			headings = accord.getByTag(opt['heading-tag']).addClass(opt['heading-class']);
+			tabs = accord.getByTag(opt['tab-tag']).addClass(opt['tab-class']);
+			
+			if (opt.height) {
+				if (_.isNumeric(opt.height) && !isNaN(opt.height)) {
+					opt.height = opt.height+'px';
+				}
+				tabs.each(function(obj){
+					obj.style('height', opt.height);
+				});
+			}
+			
+			that.open(index);
+			
+			// @TODO: change this to delegate;
+			headings.addEvent('click', function(){
+				that.select(this);
+			});
+		};
 		
-		this.open(index);
+		this.init(params);
 	};
 	
 	root.polka = polka;

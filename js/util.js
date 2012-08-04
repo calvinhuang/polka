@@ -108,7 +108,6 @@ var $dom = (function(){
 	};
 	wrapper.prototype.addEvent = function(type, callback){
 		this.each(function(obj){
-			console.log(type);
 			addEvent(obj, type, callback);
 		});
 		return this;
@@ -150,6 +149,12 @@ var $dom = (function(){
 		}
 		return parent;
 	};
+	wrapper.prototype.style = function(attr, value) {
+		_.each(function(obj){
+			obj.obj.style[attr] = value;
+		});
+		return this;
+	}
 	
 	for (i = 0; i < nodeFns.length; i++) {
 		wrapper.prototype[nodeFns[i]] = function() {

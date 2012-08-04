@@ -63,7 +63,7 @@
 					opt.height = opt.height+'px';
 				}
 				tabs.each(function(obj){
-					obj.style('height', opt.height);
+					$dom(obj).style('height', opt.height);
 				});
 			}
 			

@@ -150,19 +150,19 @@ var $dom = (function(){
 		return parent;
 	};
 	wrapper.prototype.style = function(attr, value) {
-		_.each(function(obj){
-			obj.obj.style[attr] = value;
+		this.each(function(obj){
+			obj.style[attr] = value;
 		});
 		return this;
-	}
+	};
 	
 	for (i = 0; i < nodeFns.length; i++) {
 		wrapper.prototype[nodeFns[i]] = function() {
 			var nodeFn = nodeFns[i],
 					args = Array.prototype.slice.call(arguments);
 			return wrapper.obj[nodeFn].apply(this.obj, args);
-		}
-	} 
+		};
+	}
 	
 	dom = function(obj) {
 		return new wrapper(obj);

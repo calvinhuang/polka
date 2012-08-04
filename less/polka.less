@@ -11,14 +11,18 @@
 .polka-accordion {
 	.polka-heading {
 		color: @inactiveHeadingColor;
+		background-color: @inactiveBgColor;
 	}
 	.polka-heading.open {
 		color: @activeHeadingColor;
+		background-color: @activeBgColor;
 	}
 	.polka-tab {
 		.hide;
+		background-color: @inactiveBgColor;
 	}
 	.polka-tab.open {
 		.show;
+		background-color: @activeBgColor;
 	}
 }

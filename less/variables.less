@@ -2,15 +2,6 @@
 // Variables to customize the look and feel of Bootstrap
 // -----------------------------------------------------
 
-// POLKA VARIABLES
-// -------------------------------------------------
-
-// Colors
-// -------------------------
-@inactiveHeadingColor:       @grayLighter;
-@activeHeadingColor:         @black;
-@inactiveBgColor:            @grayLight;
-@activeBgColor:              @grayLighter;
 
 // GLOBAL VALUES
 // --------------------------------------------------
@@ -237,3 +228,74 @@
 // -------------------------
 @fluidGridColumnWidth:    6.382978723%;
 @fluidGridGutterWidth:    2.127659574%;
+
+
+
+// POLKA VARIABLES
+// -------------------------------------------------
+
+// Colors
+// -------------------------
+@inactiveHeadingColor:       @grey5;
+@activeHeadingColor:         @black;
+@inactiveBgColor:            @grey2;
+@activeBgColor:              @grey1;
+
+// Box model
+// -------------------------
+@baseUnit:              12px;
+@hvRatio:               5/4;
+@pageMarginV:           @baseUnit * 4;
+@pageMarginH:           @pageMarginV * @hvRatio;
+// margin between subcomponents
+@intraMargin:           0;
+// margin between modules
+@interMargin:           @baseUnit;
+@pagePadding:           0;
+@paddingV:              @baseUnit * 2;
+@paddingH:              @paddingV * @hvRatio;
+// padding between heading and content
+@headerPadding:         @paddingV;
+
+// Typography
+// --------------------------
+@baseFontSize:          16px;
+@baseLineHeight:        1.5em;
+@btRatio:               3/2.5;
+@hbaseMarginTop:        .2em;
+
+@h1FontSize:            @baseFontSize * 3.5;
+@h1FontWeight:          bold;
+@h1LineHeight:          @baseLineHeight;
+@h1MarginTop:           @hbaseMarginTop;
+@h1MarginBottom:        @h1MarginTop * @btRatio;
+
+@h2FontSize:            @baseFontSize * 2.5;
+@h2FontWeight:          normal;
+@h2LineHeight:          @baseLineHeight;
+@h2MarginTop:           @hbaseMarginTop;
+@h2MarginBottom:        @h2MarginTop * @btRatio;
+
+@h3FontSize:            @baseFontSize * 2;
+@h3FontWeight:          bold;
+@h3LineHeight:          @baseLineHeight;
+@h3MarginTop:           @hbaseMarginTop;
+@h3MarginBottom:        @h3MarginTop * @btRatio;
+
+@h4FontSize:            @baseFontSize * 1.5;
+@h4FontWeight:          normal;
+@h4LineHeight:          @baseLineHeight;
+@h4MarginTop:           @hbaseMarginTop;
+@h4MarginBottom:        @h4MarginTop * @btRatio;
+
+@h5FontSize:            @baseFontSize * 1.2;
+@h5FontWeight:          bold;
+@h5LineHeight:          @baseLineHeight;
+@h5MarginTop:           @hbaseMarginTop;
+@h5MarginBottom:        @h5MarginTop * @btRatio;
+
+@h6FontSize:            @baseFontSize;
+@h6FontWeight:          bold;
+@h6LineHeight:          @baseLineHeight;
+@h6MarginTop:           @hbaseMarginTop;
+@h6MarginBottom:        @h6MarginTop * @btRatio;

@@ -644,3 +644,30 @@
   }
 
 }
+
+
+// POLKA MIXINS
+// -------------------------------------------------
+
+// Box Model
+// -------------------------
+.margin(hv, @hMargin) {
+  margin: @hMargin / @hvRatio @hMargin;
+}
+.margin(vh, @vMargin) {
+  margin: @vMargin @vMargin * @hvRatio;
+}
+.margin(tb, @tMargin) {
+  margin-top: @tMargin;
+  margin-bottom: @tMargin * @btRatio;
+}
+.margin(tb, @tMargin, @hMargin) {
+  margin: @tMargin @hMargin @tMargin * @btRatio;
+}
+.margin(bt, @bMargin) {
+  margin-top: @bMargin / @btRatio;
+  margin-bottom: @bMargin;
+}
+.margin(bt, @bMargin, @hMargin) {
+  margin: @bMargin / @btRatio @hMargin, @bMargin;
+}

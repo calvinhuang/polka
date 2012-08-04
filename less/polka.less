@@ -8,10 +8,54 @@
 // Utility classes
 @import "utilities.less";
 
+// Document styles
+body {
+	.margin(vh, @pageMarginV);
+	padding: @pagePadding;
+	font-family: @sansFontFamily;
+	font-size: @baseFontSize;
+	line-height: @baseLineHeight;
+}
+h1 {
+	font-size: @h1FontSize;
+	font-weight: @h1FontWeight;
+	line-height: @h1LineHeight;
+	.margin(tb, @h1MarginTop, 0);
+}
+h2 {
+	font-size: @h2FontSize;
+	font-weight: @h2FontWeight;
+	line-height: @h1LineHeight;
+	.margin(tb, @h2MarginTop, 0);
+}
+h3 {
+	font-size: @h3FontSize;
+	font-weight: @h3FontWeight;
+	line-height: @h1LineHeight;
+	.margin(tb, @h3MarginTop, 0);
+}
+h4 {
+	font-size: @h4FontSize;
+	font-weight: @h4FontWeight;
+	line-height: @h1LineHeight;
+	.margin(tb, @h4MarginTop, 0);
+}
+section {
+	margin-top: @headerPadding;
+}
+blockquote {
+	.margin(vh, @interMargin);
+}
+
 .polka-accordion {
+	.polka-heading, .polka-tab {
+		padding: @paddingV @paddingH;
+		margin: @intraMargin;
+	}
 	.polka-heading {
 		color: @inactiveHeadingColor;
 		background-color: @inactiveBgColor;
+		padding-bottom: @headerPadding / 2;
 	}
 	.polka-heading.open {
 		color: @activeHeadingColor;
@@ -20,6 +64,7 @@
 	.polka-tab {
 		.hide;
 		background-color: @inactiveBgColor;
+		padding-top: @headerPadding / 2;
 	}
 	.polka-tab.open {
 		.show;

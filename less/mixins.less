@@ -672,6 +672,10 @@
   background: -ms-linear-gradient(left, @startColor, @endColor);
   background: -o-linear-gradient(left, @startColor, @endColor);
 }
+.emboss(@color) {
+  .box-shadow(1px 1px 1px 0 @color);
+}
+
 //@TODO: implement ie-css3.htc hack (maybe)
 //.box-shadow(@x, @y, @size, @color) {
 //  -webkit-box-shadow: @x @y @size @color;

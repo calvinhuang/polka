@@ -78,14 +78,19 @@ blockquote:after {
 .polka-accordion {
 	.polka-heading, .polka-tab {
 		padding: @paddingV @paddingH;
-		margin: @intraMargin;
+		margin: @intraMargin @intraMargin 1px;
+		border-top: 1px solid #fff;
+		.emboss(@grey4);
+	}
+	.polka-heading.open, .polka-tab.open {
+		.emboss(@grey2b);
+		background-color: @activeBgColor;
 	}
 	.polka-heading {
 		color: @inactiveHeadingColor;
 		background-color: @inactiveBgColor;
 		.gradient(vertical, @grey2b, @grey2a);
-		border-top: 1px solid #fff;
-		.box-shadow('1 1 1px @grey4');
+		border-top: 1px solid @grey1;
 		padding-bottom: @headerPadding / 2;
 		text-transform: uppercase;
 		h2 {
@@ -95,8 +100,12 @@ blockquote:after {
 	}
 	.polka-heading.open {
 		color: @activeHeadingColor;
-		background-color: @activeBgColor;
+		.emboss(@grey2a);
 		.gradient(vertical, @grey1b, @grey1a);
+	}
+	.polka-heading.open:first-child,
+	.polka-heading:first-child {
+		border-top: none;
 	}
 	.polka-tab {
 		.hide;
@@ -108,7 +117,6 @@ blockquote:after {
 	}
 	.polka-tab.open {
 		.show;
-		background-color: @activeBgColor;
 		.gradient(vertical, @grey1, @grey1b);
 	}
 }

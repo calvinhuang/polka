@@ -11,11 +11,14 @@
     <script type="text/javascript" src="js/util.js"></script>
     <script type="text/javascript" src="js/polka.js"></script>
     <script type="text/javascript">
-      onload = function(){
-        var elAccordion = $dom.getById('Accordion');
-        var accordion = new polka(elAccordion);
-      };
-      $dom.addEvent('load', onload);
+      $dom.addEvent('load', function(){
+        var elAccordion = $dom.getById('Accordion'),
+        		settings = {
+        			height: 400
+        		};
+        
+        var accordion = new polka(elAccordion, settings);
+      });
     </script>
     <style type="text/css">
       body {

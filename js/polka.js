@@ -59,7 +59,7 @@
 			tabs = accord.getByTag(opt['tab-tag']).addClass(opt['tab-class']);
 			
 			if (opt.height) {
-				if (_.isNumeric(opt.height) && !isNaN(opt.height)) {
+				if (_.isNumber(opt.height) && !isNaN(opt.height)) {
 					opt.height = opt.height+'px';
 				}
 				tabs.each(function(obj){
